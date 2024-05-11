@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<style>
+    .person {
+        display: inline-block;
+        margin: 10px;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 2px #ccc;
+        width: 200px;
+        padding: 20px;
+    }
+
+</style>
+<body>
+<div id="app"></div>
+
+<script type="text/babel">
+    const Person = ({name, age, photo}) => {
+        return (
+            <div className="person">
+                <img src={photo} alt={'Photo of ' + name} />
+                <h1>{name}</h1>
+                <p>Age: {age}</p>
+            </div>
+        );
+    };
+
+    const people = (
+        <div>
+            <Person name="Jane" age="28" photo="https://static.wikia.nocookie.net/masseffectfanfiction/images/7/7a/John_Shepard_%28ME3%29.png" />
+            <Person name="John" age="30" photo="https://static.wikia.nocookie.net/masseffectfanfiction/images/7/7a/John_Shepard_%28ME3%29.png" />
+            <Person name="July" age="17" photo="https://static.wikia.nocookie.net/masseffectfanfiction/images/7/7a/John_Shepard_%28ME3%29.png" />
+        </div>
+    );
+    ReactDOM.render(people, document.getElementById('app'));
+</script>
+</body>
+</html>

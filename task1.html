@@ -12,49 +12,41 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <style>
-    .person {
-        display: inline-block;
-        margin: 10px;
-        border: 1px solid #eee;
-        box-shadow: 0 2px 2px #ccc;
-        width: 200px;
-        padding: 20px;
-        height: 100%;
+    body {
+        background-image: url("https://baldezh.top/uploads/posts/2021-04/1618546184_41-funart_pro-p-oboi-fon-fon-odnotonnii-temnii-43.jpg");
     }
-
     .films {
-        width: 100%;
-        height: 100%;
+        width: 18rem;
+        height: 32rem;
     }
-
-
-
 </style>
 <body>
-<div id="app" class="container"></div>
+<div id="app" class="container d-flex flex-wrap flex-row mt-3"></div>
 
 <script type="text/babel">
-    const Person = ({name, day, month, year, photo}) => {
+    const Film = ({name, day, month, year, photo}) => {
         return (
-            <div className="row">
-
-                <div className="col-3">
-                    <img className="films" src={photo} alt={'Photo of ' + name}/>
-                    <h1>{name}</h1>
-                    <p>Год выпуска: {day} {month} {year} года</p>
+            <div className="col-md-3 mb-3">
+                <div className="card films justify-content-between shadow-lg p-3 mb-5 bg-body rounded">
+                    <img className="card-img-top" src={photo} alt={'Photo of ' + name}/>
+                    <div className="card-body mb-auto">
+                        <h5 className="card-title">{name}</h5>
+                        <p className="card-text">Год выпуска: {day} {month} {year} года</p>
+                    </div>
                 </div>
             </div>
         );
     };
 
-    const people = (
-        <div>
-            <Person name="Груз 200" day="29" month="августа" year="2007" photo="https://static.hdrezka.ac/i/2016/5/4/p4f58c2d77a6elk87w52z.jpg" />
-            <Person name="Зеленый слоник" day="1" month="декабрая" year="2000" photo="https://static.hdrezka.ac/i/2022/7/9/xd31031af1052bu38b65m.png" />
-            <Person name="Груз 200" day="29" month="августа" year="2007" photo="https://static.wikia.nocookie.net/masseffectfanfiction/images/7/7a/John_Shepard_%28ME3%29.png" />
+    const posters = (
+        <div className="row">
+            <Film name="Реинкарнация" day="21" month="января" year="2018" photo="http://static.rezka.cloud/i/2020/8/16/n284933b9404dxc37c64r.png" />
+            <Film name="В высокой траве" day="20" month="сентября" year="2019" photo="http://static.rezka.cloud/i/2022/10/20/v5671992f42d6ee47m69e.png" />
+            <Film name="Солнцестояние" day="3" month="июля" year="2019" photo="http://static.rezka.cloud/i/2023/4/16/r3ca522554ad1qf36v95m.png" />
+            <Film name="Олдбой" day="21" month="ноября" year="2003" photo="http://static.rezka.cloud/i/2023/8/29/r8b74c351c474ue85k33k.jpg" />
         </div>
     );
-    ReactDOM.render(people, document.getElementById('app'));
+    ReactDOM.render(posters, document.getElementById('app'));
 </script>
 </body>
 </html>

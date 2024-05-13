@@ -27,9 +27,9 @@
     const Film = ({name, day, month, year, photo}) => {
         return (
             <div className="col-md-3 mb-3">
-                <div className="card films justify-content-between shadow-lg p-3 mb-5 bg-body rounded">
+                <div className="shadow-lg p-3 mb-5 bg-body rounded card films justify-content-between d-flex flex-column">
                     <img className="card-img-top" src={photo} alt={'Photo of ' + name}/>
-                    <div className="card-body mb-auto">
+                    <div className="card-body d-flex flex-column justify-content-between mt-auto align-items-start">
                         <h5 className="card-title">{name}</h5>
                         <p className="card-text">Год выпуска: {day} {month} {year} года</p>
                     </div>
@@ -40,10 +40,10 @@
 
     const posters = (
         <div className="row">
-            <Film name="Реинкарнация" day="21" month="января" year="2018" photo="http://static.rezka.cloud/i/2020/8/16/n284933b9404dxc37c64r.png" />
-            <Film name="В высокой траве" day="20" month="сентября" year="2019" photo="http://static.rezka.cloud/i/2022/10/20/v5671992f42d6ee47m69e.png" />
-            <Film name="Солнцестояние" day="3" month="июля" year="2019" photo="http://static.rezka.cloud/i/2023/4/16/r3ca522554ad1qf36v95m.png" />
-            <Film name="Олдбой" day="21" month="ноября" year="2003" photo="http://static.rezka.cloud/i/2023/8/29/r8b74c351c474ue85k33k.jpg" />
+            <Film name="Астрал" day="31" month="марта" year="2011" photo="https://static.hdrezka.ac/i/2013/12/17/k0f90fc754e0emm27e57h.jpg" />
+            <Film name="Молчание ягнят" day="30" month="января" year="1991" photo="https://static.hdrezka.ac/i/2021/1/19/fd539f56d14c7ls62h55d.jpeg" />
+            <Film name="Достать ножи" day="7" month="сентября" year="2019" photo="https://static.hdrezka.ac/i/2022/8/2/n9aea618cf25emx56s21b.jpg" />
+            <Film name="Остров проклятых" day="13" month="февраля" year="2010" photo="https://static.hdrezka.ac/i/2021/3/8/ga421fd7837ffyx31y64f.jpeg" />
         </div>
     );
     ReactDOM.render(posters, document.getElementById('app'));

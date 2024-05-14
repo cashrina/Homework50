@@ -15,10 +15,6 @@
     body {
         background-image: url("https://baldezh.top/uploads/posts/2021-04/1618546184_41-funart_pro-p-oboi-fon-fon-odnotonnii-temnii-43.jpg");
     }
-    .films {
-        width: 18rem;
-        height: 32rem;
-    }
 </style>
 <body>
 <div id="app" class="container d-flex flex-wrap flex-row mt-3"></div>
@@ -27,7 +23,7 @@
     const Film = ({name, day, month, year, photo}) => {
         return (
             <div className="col-md-3 mb-3">
-                <div className="shadow-lg p-3 mb-5 bg-body rounded card films justify-content-between d-flex flex-column">
+                <div className="shadow-lg p-3 mb-5 bg-body rounded cardjustify-content-between d-flex flex-column" style={{ width: '18rem', height: '30rem'}}>
                     <img className="card-img-top" src={photo} alt={'Photo of ' + name}/>
                     <div className="card-body d-flex flex-column justify-content-between mt-auto align-items-start">
                         <h5 className="card-title">{name}</h5>

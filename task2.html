@@ -51,6 +51,16 @@
             </div>
         );
     };
+    const Green = ({greenText, greenLink}) => {
+        return (
+            <div className="container">
+                <div className="row mt-4 justify-content-center text-center bg-success rounded-4 mb-5">
+                    <h3 className="text-light col-5 pt-5">{greenText}</h3>
+                    <a href="#" className="btn btn-light my-5 mx-auto" style={{ width: 'auto', padding: '0.5rem 1rem' }}>{greenLink}</a>
+                </div>
+            </div>
+        );
+    };
     const Content = ({imageCard, text, mainText}) => {
         return (
             <div className="col-md-3 mb-3">
@@ -62,6 +72,24 @@
                         </div>
                     </div>
                 </div>
+        );
+    };
+    const Footer = ({active, link, disabled}) => {
+        return (
+            <ul className="nav justify-content-center mb-4">
+                <li className="nav-item">
+                    <a className="nav-link active text-success" href="#">{active}</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-success" href="#">{link}</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link text-success" href="#">{link}</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link disabled" href="#">{disabled}</a>
+                </li>
+            </ul>
         );
     };
 
@@ -80,7 +108,13 @@
             <Header headerTitle="Work at the speed of thought" headerText="Tools, tutorials, design and innovation experts,
                     all in one place! The most intuitive way to imagine your next user experience." headerBtn="Get started" headerImg="images/social.png"/>
         </div>
-    )
+    );
+
+    const green = (
+        <div>
+            <Green greenText="Work at the speed of thought" greenLink="Get This"/>
+        </div>
+    );
 
     const content = (
         <div className="row">
@@ -95,16 +129,22 @@
         </div>
     );
 
-    const test = (
+    const footer = (
+        <div>
+            <Footer active="Work" link="Get This" disabled="help"/>
+        </div>
+    );
+
+    const allPart = (
         <div className="row">
             {nav}
             {header}
+            {green}
             {content}
+            {footer}
         </div>
-    )
-
-
-    ReactDOM.render(test, document.getElementById('app'));
+    );
+    ReactDOM.render(allPart, document.getElementById('app'));
 </script>
 </body>
 </html>
